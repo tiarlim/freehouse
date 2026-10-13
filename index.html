@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freehouse | Barra da Lagoa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-nav" aria-label="Navegacao principal">
+      <a class="brand" href="#home"><span class="brand-mark">F</span> FREEHOUSE</a>
+      <div class="mode-switch" aria-label="Versao"><button type="button" data-mode="guest" aria-pressed="true">Hospede</button><button type="button" data-mode="host" aria-pressed="false">Anfitriao</button></div>
+      <nav id="navigation"></nav>
+      <div class="side-bottom"><span class="material-symbols-rounded">location_on</span><div>Barra da Lagoa<small>Florianopolis, SC</small></div></div>
+    </aside>
+    <main class="main-frame">
+      <header class="top-bar"><a class="top-brand" href="#home">FREEHOUSE</a><span class="demo-label">Demo local <span class="desktop-only">/ lugares ficticios</span></span><div class="top-actions"><button class="icon-button" type="button" data-action="switch-mode" title="Alternar hospede e anfitriao" aria-label="Alternar hospede e anfitriao"><span class="material-symbols-rounded">swap_horiz</span></button><button class="icon-button" type="button" data-route="guest" title="Minha conta" aria-label="Minha conta"><span class="material-symbols-rounded">account_circle</span></button></div></header>
+      <section id="home" class="screen" aria-label="Descobrir">
+        <div class="discovery-head"><span class="eyebrow">Barra da Lagoa</span><h1>Hoje na Barra</h1><p>O que combina com seu dia?</p></div>
+        <form id="search-form" class="search-line"><span class="material-symbols-rounded">search</span><input name="query" type="search" aria-label="Buscar experiencias" placeholder="Surf, jantar, trilha, coworking..."><button class="icon-button" type="submit" title="Buscar" aria-label="Buscar"><span class="material-symbols-rounded">arrow_forward</span></button></form>
+        <div class="section-head"><h2>Proximas experiencias</h2><a href="#experiences">Ver agenda &rarr;</a></div><div id="featured-experiences" class="experience-grid"></div>
+        <div class="section-head"><h2>Lugares por aqui</h2><a href="#places">Ver todos &rarr;</a></div><div id="home-places" class="place-grid"></div>
+      </section>
+      <section id="places" class="screen" aria-label="Lugares"><div class="page-head"><span class="eyebrow">Barra da Lagoa</span><h1>Lugares</h1></div><div id="place-directory" class="place-grid"></div></section>
+      <section id="hostel" class="screen" aria-label="Perfil do lugar"><div id="place-detail"></div></section>
+      <section id="experiences" class="screen" aria-label="Experiencias"><div class="page-head"><span class="eyebrow">Agenda local</span><h1>Experiencias</h1></div><div class="filter-bar"><label class="search-line"><span class="material-symbols-rounded">search</span><input id="experience-search" type="search" aria-label="Buscar na agenda" placeholder="Buscar na agenda"></label><select id="place-filter" aria-label="Filtrar por lugar"></select></div><div id="category-filters" class="category-row" aria-label="Categorias"></div><div id="experience-list" class="agenda-list"></div></section>
+      <section id="map" class="screen" aria-label="Guia local"><div class="page-head"><span class="eyebrow">Recomendacoes</span><h1>Guia local</h1></div><div id="map-filters" class="category-row" aria-label="Categorias do guia"></div><div id="map-points" class="map-list"></div></section>
+      <section id="community" class="screen" aria-label="Comunidade"><div class="page-head"><span class="eyebrow">Planos abertos</span><h1>Comunidade</h1></div><div id="community-context" class="context-line"></div><form id="post-plan" class="post-plan"><label for="plan-text">Qual e o plano?</label><textarea id="plan-text" name="text" maxlength="350" required placeholder="Surf cedo e cafe depois. Alguem anima?"></textarea><div class="form-row"><label>Quando<input name="startsAt" type="datetime-local" required></label><button class="primary-button" type="submit"><span class="material-symbols-rounded">send</span> Publicar</button></div></form><div id="community-posts" class="community-list"></div></section>
+      <section id="guest" class="screen" aria-label="Minha conta"><div class="page-head"><span class="eyebrow">Minha conta</span><h1>Perfil e roteiro</h1></div><div id="guest-content"></div></section>
+      <section id="host" class="screen" aria-label="Painel do anfitriao"><div class="page-head"><span class="eyebrow">Anfitriao</span><h1>Painel do lugar</h1></div><div class="host-toolbar"><label>Lugar<select id="host-place"></select></label><button class="primary-button" type="button" data-action="new-experience"><span class="material-symbols-rounded">add</span> Nova experiencia</button></div><div id="host-account" class="context-line"></div><div id="host-metrics" class="metrics-grid"></div><div class="section-head"><h2>Agenda do lugar</h2><button class="icon-button" type="button" data-action="export-report" aria-label="Baixar relatorio" title="Baixar relatorio"><span class="material-symbols-rounded">download</span></button></div><div id="host-experiences" class="agenda-list"></div><div class="section-head"><h2>Recomendacoes locais</h2><button class="secondary-button" type="button" data-action="new-point"><span class="material-symbols-rounded">add_location_alt</span> Adicionar ponto</button></div><div id="host-points" class="map-list"></div><div class="section-head"><h2>Acesso do lugar</h2></div><div class="share-row"><a id="place-public-link" href="#hostel"></a><button class="icon-button" type="button" data-action="copy-link" title="Copiar link" aria-label="Copiar link"><span class="material-symbols-rounded">content_copy</span></button><button class="secondary-button" type="button" data-action="open-place">Abrir pagina</button></div></section>
+      <section id="host-community" class="screen" aria-label="Planos do lugar"><div class="page-head"><span class="eyebrow">Anfitriao</span><h1>Planos do lugar</h1></div><div id="host-community-context" class="context-line"></div><div id="host-community-posts" class="community-list"></div></section>
+    </main>
+    <aside class="right-rail" aria-label="Minha estadia"><div id="stay-summary"></div><div class="section-head"><h2>No meu roteiro</h2></div><div id="rail-itinerary"></div></aside>
+  </div>
+  <nav id="bottom-navigation" class="bottom-nav" aria-label="Navegacao inferior"></nav>
+  <dialog id="account-dialog" aria-labelledby="account-title"><form id="account-form"><div class="dialog-head"><h2 id="account-title">Entrar na demo</h2><button class="icon-button" type="button" data-action="close-dialog" aria-label="Fechar" title="Fechar"><span class="material-symbols-rounded">close</span></button></div><p class="muted">Perfil salvo apenas neste navegador. Login real sera integrado na proxima etapa.</p><div id="local-accounts"></div><label>Nome ou apelido<input name="name" required maxlength="40" autocomplete="nickname"></label><label>Versao<select name="role"><option value="guest">Hospede</option><option value="host">Anfitriao</option></select></label><button class="primary-button" type="submit">Criar perfil local</button></form></dialog>
+  <dialog id="editor-dialog" aria-labelledby="editor-title"><div id="editor-content"></div></dialog><div id="toast" role="status" aria-live="polite"></div>
+  <script src="lucide.min.js"></script><script src="qrcode.js"></script><script src="core.js"></script><script src="script.js"></script>
+</body>
+</html>

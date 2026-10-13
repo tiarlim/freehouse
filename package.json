@@ -1,0 +1,19 @@
+{
+  "name": "freehouse-platform",
+  "private": true,
+  "version": "0.3.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node app-server.mjs",
+    "dev": "node --env-file=../../work/freehouse-runtime/.env app-server.mjs",
+    "migrate": "node migrate.mjs",
+    "migrate:dev": "node --env-file=../../work/freehouse-runtime/.env migrate.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/auth": "0.5.0-beta",
+    "pg": "^8.16.3",
+    "jose": "^6.1.0"
+  },
+  "devDependencies": { "esbuild": "^0.25.0" }
+}
